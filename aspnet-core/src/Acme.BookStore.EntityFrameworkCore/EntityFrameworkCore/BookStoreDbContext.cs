@@ -81,13 +81,7 @@ public class BookStoreDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        builder.Entity<Book>(b =>
-        {
-            b.ToTable(BookStoreConsts.DbTablePrefix + "Books",
-                BookStoreConsts.DbSchema);
-            b.ConfigureByConvention(); //auto configure for the base class props
-            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
-        });
+      
         builder.Entity<Author>(b =>
         {
             b.ToTable(BookStoreConsts.DbTablePrefix + "Authors",
